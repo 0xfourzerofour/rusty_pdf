@@ -1,7 +1,7 @@
 [package]
 name = "rusty_pdf"
 description = "Crate adding text and images to existing pdf files"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Joshua Pauline <joshpauline@gmail.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
