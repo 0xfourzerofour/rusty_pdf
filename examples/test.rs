@@ -4,9 +4,6 @@ use std::{fs, io::Cursor};
 
 use rusty_pdf::{Font, PDFSigningDocument, Rectangle};
 
-// #[allow(non_upper_case_globals)]
-// const mm2pt: f64 = 2.834;
-
 fn main() {
     let doc_mem = fs::read("examples/pdf_example.pdf").unwrap_or(vec![]);
 
