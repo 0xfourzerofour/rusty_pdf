@@ -1,0 +1,21 @@
+[package]
+name = "rusty_pdf"
+description = "Crate adding text and images to existing pdf files"
+version = "0.1.0"
+authors = ["Joshua Pauline <joshpauline@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["pdf", "signing"]
+categories = ["encoding", "graphics"]
+repository = "https://github.com/joshpauline/rusty_pdf"
+
+[dependencies]
+log = "0.4.14"
+lopdf = { version = "0.27.0", features = [
+    "chrono_time",
+    "nom_parser",
+    "embed_image"
+], default-features = false, git = "https://github.com/J-F-Liu/lopdf", branch = "master" }
+png = "0.17.2"
+imagesize = "0.9"
