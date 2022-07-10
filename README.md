@@ -1,5 +1,8 @@
 # Rusty PDF
 
+[![Crates.io](https://img.shields.io/crates/v/rusty_pdf)](https://crates.io/crates/rusty_pdf/)
+[![API Docs](https://img.shields.io/badge/docs.rs-rusty_pdf-blue)](https://docs.rs/rusty_pdf/latest/)
+
 This crate is a specialized crate that uses [`lopdf`][lopdf] to add images and 
 text to selected pages.
 
