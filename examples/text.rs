@@ -4,7 +4,7 @@ use std::fs;
 use rusty_pdf::{Font, PDFSigningDocument};
 
 fn main() {
-    let doc_mem = fs::read("examples/pdf_example.pdf").unwrap_or(vec![]);
+    let doc_mem = fs::read("examples/data/pdf_example.pdf").unwrap_or(vec![]);
 
     let doc = Document::load_mem(&doc_mem).unwrap_or_default();
 
