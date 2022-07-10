@@ -7,7 +7,7 @@ This library only supports PNG images as the images.
 
 ### This library was heavily inspired from the following project
 
-[pdf_signing]: https://github.com/ralpha/pdf_signing
+[`pdf_signing`][pdf_signing]
 
 I migrated to this repo as I have different a different end goal for the project, please check out his
 project if it is something you are interested in!
