@@ -5,6 +5,9 @@ text to selected pages.
 
 This library only supports PNG images as the images.
 
+The main aim of this library is to abstract some of the lower level PDF implementations in [`lopdf`][lopdf]
+to an easy to use library for simple pdf manipulation tasks.
+
 ### This library was heavily inspired from the following project
 
 [`pdf_signing`][pdf_signing]
@@ -12,6 +15,15 @@ This library only supports PNG images as the images.
 I migrated to this repo as I have different a different end goal for the project, please check out his
 project if it is something you are interested in!
 
+## TODO
+
+  - Allow importing of ttf files for font rendering
+  - Add feature to allow jpeg images
+  - Create solid documentation
+  - Merge documents
+  - Create Table in pdf
+  - introduce cbindgen and expose c api for easy integration with other languages
+  
 ## License
 
 The code in this project is licensed under the MIT or Apache 2.0 license.
