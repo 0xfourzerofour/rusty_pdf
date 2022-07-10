@@ -6,7 +6,7 @@ authors = ["Joshua Pauline <joshpauline@gmail.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
-keywords = ["pdf", "signing"]
+keywords = ["pdf", "manipulation", "pdf-manipulation", "pdf-generation"]
 categories = ["encoding", "graphics"]
 repository = "https://github.com/joshpauline/rusty_pdf"
 

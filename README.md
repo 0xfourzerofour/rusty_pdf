@@ -6,7 +6,7 @@
 This crate is a specialized crate that uses [`lopdf`][lopdf] to add images and 
 text to selected pages.
 
-This library only supports PNG images as the images.
+This library only supports PNG images however I will be adding JPEG support.
 
 The main aim of this library is to abstract some of the lower level PDF implementations in [`lopdf`][lopdf]
 to an easy to use library for simple pdf manipulation tasks.
