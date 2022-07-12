@@ -23,8 +23,6 @@ project if it is something you are interested in!
   - Allow importing of ttf files for font rendering
   - Add feature to allow jpeg images
   - Create solid documentation
-  - Merge documents
-  - Create Table in pdf
   - introduce cbindgen and expose c api for easy integration with other languages
   
 ## License
