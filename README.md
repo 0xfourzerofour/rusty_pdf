@@ -18,6 +18,13 @@ to an easy to use library for simple pdf manipulation tasks.
 I migrated to this repo as I have different a different end goal for the project, please check out his
 project if it is something you are interested in!
 
+## Current Features
+
+  - Render html to pdf using headless chrome
+  - Add text to pdf
+  - Add png file to pdf
+  - merge pdf files
+
 ## TODO
 
   - Allow importing of ttf files for font rendering
