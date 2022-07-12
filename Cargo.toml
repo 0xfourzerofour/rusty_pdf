@@ -1,7 +1,7 @@
 [package]
 name = "rusty_pdf"
 description = "Crate adding text and images to existing pdf files"
-version = "0.2.0"
+version = "0.21.0"
 authors = ["Joshua Pauline <joshpauline@gmail.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
@@ -19,3 +19,5 @@ lopdf = { version = "0.27.0", features = [
 ], default-features = false, git = "https://github.com/J-F-Liu/lopdf", branch = "master" }
 png = "0.17.2"
 imagesize = "0.9"
+headless_chrome = "0.9.0"
+tiny_http = "0.6"

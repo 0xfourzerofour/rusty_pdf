@@ -1,17 +1,21 @@
 mod error;
 mod image_xobject;
 mod pdf_object;
+mod utils;
 
+use headless_chrome::{Browser, LaunchOptionsBuilder, Tab};
 use image_xobject::ImageXObject;
 use lopdf::{content::Operation, dictionary, Bookmark, Document, Object, ObjectId};
 use pdf_object::PdfObjectDeref;
 use std::{
     collections::{BTreeMap, HashMap},
     io::Read,
+    sync::Arc,
 };
 
 pub use error::Error;
 pub use lopdf;
+use utils::Server;
 
 #[derive(Debug, Clone, Default)]
 pub struct Rectangle {
@@ -52,12 +56,50 @@ pub struct PDFSigningDocument {
     // font_unsafe_name: HashMap<String, String>,
 }
 
+fn browser() -> Browser {
+    Browser::new(
+        LaunchOptionsBuilder::default()
+            .headless(true)
+            .build()
+            .unwrap(),
+    )
+    .unwrap()
+}
+
+fn dumb_client(server: &Server) -> (Browser, Arc<Tab>) {
+    let browser = browser();
+    let tab = browser.wait_for_initial_tab().unwrap();
+    tab.navigate_to(&format!("http://127.0.0.1:{}", server.port()))
+        .unwrap();
+    (browser, tab)
+}
+
+fn dumb_server(data: &'static str) -> (Server, Browser, Arc<Tab>) {
+    let server = Server::with_dumb_html(data);
+    let (browser, tab) = dumb_client(&server);
+    (server, browser, tab)
+}
+
 impl PDFSigningDocument {
     pub fn new(raw_document: Document) -> Self {
         PDFSigningDocument {
             raw_document,
             image_signature_object_id: HashMap::new(),
         }
+    }
+
+    pub fn generate_pdf_from_html(html_content: &'static str) -> Self {
+        let (_server, _browser, tab) = dumb_server(&html_content);
+
+        let local_pdf = tab
+            .wait_until_navigated()
+            .unwrap()
+            .print_to_pdf(None)
+            .unwrap();
+
+        let new_pdf = Document::load_mem(&local_pdf).unwrap();
+
+        return PDFSigningDocument::new(new_pdf);
     }
 
     pub fn merge(documents: Vec<Document>) -> Result<Self, Error> {
